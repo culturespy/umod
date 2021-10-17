@@ -10,14 +10,14 @@
 
 In the package a makefile for the gcc (makefile.gcc) and a makefile for the MS Visual C Compiler (makefile.vc) is included, but you can generate your own makefile for the compiler of your choice.
 
-Compiling wxWidgets:
+#### Compiling wxWidgets:
 - Compile it with **BUILD=release** otherwise the executable will be very large.
 - The vc compiler somehow generates a smaller executable.
 - Set the linkage to static ( in the config.gcc or config.vc ) before you compile the wxWidgets, to ensure, that also on other PC's your executable will run.
 
 If you use my makefiles, you have to change the **WX_DIR** Variable to your wxWidgets directory. This Variable is nearly at the beginning of the makefiles.
 
-__note:__ I have set the linkage to static in the corresponding config.* files, if you have not compiled you wxWidgets with static linkage the compiler will fail, when linking the GUI.
+__note:__ I have set the linkage to static in the corresponding __config.*__ files, if you have not compiled you **wxWidgets** with static linkage the compiler will fail, when linking the GUI.
 
 ### 1.2 Using gcc:
 change in the __uMod_GUI__ Directory and type:
@@ -43,7 +43,7 @@ __note:__ you need to use the special MS Visual prompt
 - MS Visual C Compiler (I use the free Express 2010 version)
 - maybe the Microsoft Windows SDK
 
-There exist two makefiles, one for the __mingw32-make.exe__ ( makefile.gcc ) which call the vc compiler and one for the **nmake.exe** ( **makefile.vc** ) which also calls the vc compiler. I have created the __makefile.gcc__ only to use the **-j 4** option of the gnu make.
+There exist two makefiles, one for the **mingw32-make.exe** ( **makefile.gcc** ) which call the vc compiler and one for the **nmake.exe** ( **makefile.vc** ) which also calls the vc compiler. I have created the **makefile.gcc** only to use the **-j 4** option of the gnu make.
 
 You have to compile the 3 dll's separately (one for each injection method). The dll will be copied after successful compilation in the __uMod_GUI/bin directory__.
 
